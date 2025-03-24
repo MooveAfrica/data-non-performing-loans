@@ -1,0 +1,2 @@
+# This file is intentionally empty to maintain the data folder structure in git.
+# All actual data files are ignored via .gitignore 

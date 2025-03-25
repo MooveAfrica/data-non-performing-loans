@@ -459,68 +459,68 @@ SELECT
     'riders_data_reconciliation_uberconnect_lagos' as table_name
 FROM reconciliation_history.riders_data_reconciliation_uberconnect_lagos
 
--- 9) Nigeria - Ibadan - UberMoto
-UNION ALL
-SELECT
-    'Ibadan' as city,
-    week,
-    NULL as day,
-    drn,
-    driveruuid as uber_id,
-    'UberMoto TVS' as vehicle_type,
-    effective_days,
-    total_earnings as net_earning,
-    total_cash_collected as cash_collected,
-    total_uber_balance as uber_balance,
-    amount_due as remittance,
-    amount_due,
-    net_outstanding as outstanding,
-    cumm_outstanding,
-    'reconciliation_proxy_current' as schema_name,
-    'riders_data_reconciliation_ubermoto_ibadan' as table_name
-FROM reconciliation_proxy_current.riders_data_reconciliation_ubermoto_ibadan
+-- -- 9) Nigeria - Ibadan - UberMoto
+-- UNION ALL
+-- SELECT
+--     'Ibadan' as city,
+--     week,
+--     NULL as day,
+--     drn,
+--     driveruuid as uber_id,
+--     'UberMoto TVS' as vehicle_type,
+--     effective_days,
+--     total_earnings as net_earning,
+--     total_cash_collected as cash_collected,
+--     total_uber_balance as uber_balance,
+--     amount_due as remittance,
+--     amount_due,
+--     net_outstanding as outstanding,
+--     cumm_outstanding,
+--     'reconciliation_proxy_current' as schema_name,
+--     'riders_data_reconciliation_ubermoto_ibadan' as table_name
+-- FROM reconciliation_proxy_current.riders_data_reconciliation_ubermoto_ibadan
 
 
 -- 10) Kenya - Nairobi - TVS
-UNION ALL
-SELECT
-    'Nairobi' as city,
-    week,
-    day,
-    drn,
-    driveruuid as uber_id,
-    'TVS' as vehicle_type,
-    case when day_off=TRUE then 0 else 1 end as effective_days,
-    total_earnings as net_earning,
-    total_cash_collected as cash_collected,
-    total_uber_balance as uber_balance,
-    amount_due as remittance,
-    amount_due,
-    net_outstanding as outstanding,
-    cumm_outstanding,
-    'reconciliation_proxy_current' as schema_name,
-    'drivers_data_reconciliation_nairobi' as table_name
-FROM reconciliation_proxy_current.drivers_data_reconciliation_nairobi
+-- UNION ALL
+-- SELECT
+--     'Nairobi' as city,
+--     week,
+--     day,
+--     drn,
+--     driveruuid as uber_id,
+--     'TVS' as vehicle_type,
+--     case when day_off=TRUE then 0 else 1 end as effective_days,
+--     total_earnings as net_earning,
+--     total_cash_collected as cash_collected,
+--     total_uber_balance as uber_balance,
+--     amount_due as remittance,
+--     amount_due,
+--     net_outstanding as outstanding,
+--     cumm_outstanding,
+--     'reconciliation_proxy_current' as schema_name,
+--     'drivers_data_reconciliation_nairobi' as table_name
+-- FROM reconciliation_proxy_current.drivers_data_reconciliation_nairobi
 
--- History Schema Tables
-UNION ALL
-SELECT
-    'Nairobi' as city,
-    week,
-    day,
-    drn,
-    driveruuid as uber_id,
-    'TVS' as vehicle_type,
-    case when day_off=TRUE then 0 else 1 end as effective_days,
-    total_earnings as net_earning,
-    total_cash_collected as cash_collected,
-    total_uber_balance as uber_balance,
-    amount_due as remittance,
-    amount_due,
-    net_outstanding as outstanding,
-    cumm_outstanding,
-    'reconciliation_history' as schema_name,
-    'drivers_data_reconciliation_nairobi' as table_name
-FROM reconciliation_history.drivers_data_reconciliation_nairobi
+-- -- History Schema Tables
+-- UNION ALL
+-- SELECT
+--     'Nairobi' as city,
+--     week,
+--     day,
+--     drn,
+--     driveruuid as uber_id,
+--     'TVS' as vehicle_type,
+--     case when day_off=TRUE then 0 else 1 end as effective_days,
+--     total_earnings as net_earning,
+--     total_cash_collected as cash_collected,
+--     total_uber_balance as uber_balance,
+--     amount_due as remittance,
+--     amount_due,
+--     net_outstanding as outstanding,
+--     cumm_outstanding,
+--     'reconciliation_history' as schema_name,
+--     'drivers_data_reconciliation_nairobi' as table_name
+-- FROM reconciliation_history.drivers_data_reconciliation_nairobi
 
 ORDER BY city, week, day, drn;
